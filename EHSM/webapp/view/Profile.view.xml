@@ -1,0 +1,59 @@
+<mvc:View
+    controllerName="ehsm.controller.Profile"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form">
+    <Page title="Profile" showNavButton="true" navButtonPress=".onNavBack">
+        <content>
+            <VBox class="sapUiMediumMargin">
+                <Title text="Employee Profile" level="H2" class="sapUiMediumMarginBottom"/>
+                
+                <f:SimpleForm
+                    editable="false"
+                    layout="ResponsiveGridLayout"
+                    labelSpanXL="3"
+                    labelSpanL="3"
+                    labelSpanM="3"
+                    labelSpanS="12"
+                    adjustLabelSpan="false"
+                    emptySpanXL="4"
+                    emptySpanL="4"
+                    emptySpanM="4"
+                    emptySpanS="0"
+                    columnsXL="1"
+                    columnsL="1"
+                    columnsM="1"
+                    singleContainerFullSize="false">
+                    <f:content>
+                        <Label text="Employee ID"/>
+                        <Text text="{profileModel>/EmployeeId}"/>
+                        
+                        <Label text="Name"/>
+                        <Text text="{profileModel>/FirstName} {profileModel>/LastName}"/>
+                        
+                        <Label text="Email"/>
+                        <Text text="{profileModel>/EmailId}"/>
+                        
+                        <Label text="Plant"/>
+                        <Text text="{profileModel>/Plant}"/>
+                        
+                        <Label text="Company"/>
+                        <Text text="{profileModel>/Company}"/>
+                        
+                        <Label text="City"/>
+                        <Text text="{profileModel>/City}"/>
+                        
+                        <Label text="Country"/>
+                        <Text text="{profileModel>/Country}"/>
+                        
+                        <Label text="Postal Code"/>
+                        <Text text="{profileModel>/PostalCode}"/>
+                        
+                        <Label text="Start Date"/>
+                        <Text text="{path: 'profileModel>/StartDate', type: 'sap.ui.model.odata.type.DateTime'}"/>
+                    </f:content>
+                </f:SimpleForm>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

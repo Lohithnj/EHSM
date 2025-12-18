@@ -1,0 +1,67 @@
+<mvc:View
+    controllerName="ehsm.controller.Incidents"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page title="Incident Management" showNavButton="true" navButtonPress=".onNavBack">
+        <content>
+            <VBox class="sapUiMediumMargin">
+                <Title text="Incident Management" level="H2" class="sapUiMediumMarginBottom"/>
+                
+                <Table
+                    id="incidentsTable"
+                    items="{incidentModel>/results}"
+                    growing="true"
+                    growingThreshold="20"
+                    mode="SingleSelect">
+                    <headerToolbar>
+                        <Toolbar>
+                            <Title text="Incidents"/>
+                            <ToolbarSpacer/>
+                            <Button icon="sap-icon://refresh" press=".onRefresh"/>
+                        </Toolbar>
+                    </headerToolbar>
+                    <columns>
+                        <Column>
+                            <Text text="Incident ID"/>
+                        </Column>
+                        <Column>
+                            <Text text="Description"/>
+                        </Column>
+                        <Column>
+                            <Text text="Category"/>
+                        </Column>
+                        <Column>
+                            <Text text="Priority"/>
+                        </Column>
+                        <Column>
+                            <Text text="Status"/>
+                        </Column>
+                        <Column>
+                            <Text text="Date"/>
+                        </Column>
+                        <Column>
+                            <Text text="Created By"/>
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{incidentModel>IncidentId}"/>
+                                <Text text="{incidentModel>IncidentDescription}"/>
+                                <Text text="{incidentModel>IncidentCategory}"/>
+                                <ObjectStatus 
+                                    text="{incidentModel>IncidentPriority}"
+                                    state="{path: 'incidentModel>IncidentPriority', formatter: '.formatPriorityState'}"/>
+                                <ObjectStatus 
+                                    text="{incidentModel>IncidentStatus}"
+                                    state="{path: 'incidentModel>IncidentStatus', formatter: '.formatStatusState'}"/>
+                                <Text text="{path: 'incidentModel>IncidentDate', type: 'sap.ui.model.odata.type.DateTime'}"/>
+                                <Text text="{incidentModel>CreatedBy}"/>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

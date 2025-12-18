@@ -1,0 +1,39 @@
+<mvc:View
+    controllerName="ehsm.controller.Dashboard"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page title="EHSM Portal - Dashboard">
+        <customHeader>
+            <Bar>
+                <contentLeft>
+                    <Title text="Safety Engineer Dashboard"/>
+                </contentLeft>
+                <contentRight>
+                    <Button text="Profile" press=".onProfile" class="sapUiTinyMarginEnd"/>
+                    <Button text="Logout" press=".onLogout" type="Emphasized"/>
+                </contentRight>
+            </Bar>
+        </customHeader>
+        <content>
+            <VBox class="sapUiMediumMargin">
+                <Title text="Welcome to EHSM Portal" level="H2" class="sapUiMediumMarginBottom"/>
+                <Text text="Manage incidents and risks in your plant" class="sapUiSmallMarginBottom"/>
+                
+                <TileContainer class="sapUiMediumMarginTop">
+                    <StandardTile
+                        title="Incident Management"
+                        info="View and manage incidents"
+                        icon="sap-icon://alert"
+                        press=".onIncidentTile"
+                        class="sapUiTinyMargin"/>
+                    <StandardTile
+                        title="Risk Assessment"
+                        info="View and assess risks"
+                        icon="sap-icon://warning"
+                        press=".onRiskTile"
+                        class="sapUiTinyMargin"/>
+                </TileContainer>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

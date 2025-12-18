@@ -19,6 +19,11 @@ server:
           - path: /sap
             url: http://172.17.19.24:8000
             destination: PortalProject
+            authenticationType: BasicAuthentication
+            username: k901813
+            password: Nithiesh@10
+            headers:
+              sap-client: '100'
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:

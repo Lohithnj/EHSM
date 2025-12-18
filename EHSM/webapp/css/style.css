@@ -1,0 +1,39 @@
+.myAppDemoWT {
+    height: 100%;
+}
+
+.sapUiContentPadding {
+    padding: 1rem;
+}
+
+.sapUiMediumMargin {
+    margin: 2rem;
+}
+
+.sapUiMediumMarginTop {
+    margin-top: 2rem;
+}
+
+.sapUiMediumMarginBottom {
+    margin-bottom: 2rem;
+}
+
+.sapUiSmallMargin {
+    margin: 1rem;
+}
+
+.sapUiSmallMarginTop {
+    margin-top: 1rem;
+}
+
+.sapUiSmallMarginBottom {
+    margin-bottom: 1rem;
+}
+
+.sapUiTinyMargin {
+    margin: 0.5rem;
+}
+
+.sapUiTinyMarginEnd {
+    margin-right: 0.5rem;
+}

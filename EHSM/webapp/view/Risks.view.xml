@@ -1,0 +1,69 @@
+<mvc:View
+    controllerName="ehsm.controller.Risks"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page title="Risk Assessment" showNavButton="true" navButtonPress=".onNavBack">
+        <content>
+            <VBox class="sapUiMediumMargin">
+                <Title text="Risk Assessment" level="H2" class="sapUiMediumMarginBottom"/>
+                
+                <Table
+                    id="risksTable"
+                    items="{riskModel>/results}"
+                    growing="true"
+                    growingThreshold="20"
+                    mode="SingleSelect">
+                    <headerToolbar>
+                        <Toolbar>
+                            <Title text="Risks"/>
+                            <ToolbarSpacer/>
+                            <Button icon="sap-icon://refresh" press=".onRefresh"/>
+                        </Toolbar>
+                    </headerToolbar>
+                    <columns>
+                        <Column>
+                            <Text text="Risk ID"/>
+                        </Column>
+                        <Column>
+                            <Text text="Description"/>
+                        </Column>
+                        <Column>
+                            <Text text="Category"/>
+                        </Column>
+                        <Column>
+                            <Text text="Severity"/>
+                        </Column>
+                        <Column>
+                            <Text text="Likelihood"/>
+                        </Column>
+                        <Column>
+                            <Text text="Mitigation Measures"/>
+                        </Column>
+                        <Column>
+                            <Text text="Identification Date"/>
+                        </Column>
+                        <Column>
+                            <Text text="Created By"/>
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{riskModel>RiskId}"/>
+                                <Text text="{riskModel>RiskDescription}"/>
+                                <Text text="{riskModel>RiskCategory}"/>
+                                <ObjectStatus 
+                                    text="{riskModel>RiskSeverity}"
+                                    state="{path: 'riskModel>RiskSeverity', formatter: '.formatSeverityState'}"/>
+                                <Text text="{riskModel>Likelihood}"/>
+                                <Text text="{riskModel>MitigationMeasures}"/>
+                                <Text text="{path: 'riskModel>RiskIdentificationDate', type: 'sap.ui.model.odata.type.DateTime'}"/>
+                                <Text text="{riskModel>CreatedBy}"/>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

@@ -8,15 +8,19 @@
     "sapui5"
   ],
   "main": "webapp/index.html",
-  "dependencies": {},
   "devDependencies": {
-    "@ui5/cli": "^4.0.33",
+    "@sap-ux/ui5-middleware-fe-mockserver": "2",
     "@sap/ux-ui5-tooling": "1",
-    "@sap-ux/ui5-middleware-fe-mockserver": "2"
+    "@ui5/cli": "^4.0.33",
+    "cors": "^2.8.5",
+    "express": "^4.22.1",
+    "http-proxy-middleware": "^2.0.9"
   },
   "scripts": {
-    "start": "fiori run --open \"test/flp.html#app-preview\"",
+    "start": "fiori run --config ./ui5-proxy.yaml --open \"/index.html\"",
     "start-local": "fiori run --config ./ui5-local.yaml --open \"test/flp.html#app-preview\"",
+    "start-dev": "fiori run --config ./ui5-dev.yaml --open \"/index.html\"",
+    "start-proxy": "node proxy-server.js",
     "build": "ui5 build --config=ui5.yaml --clean-dest --dest dist",
     "deploy": "fiori verify",
     "deploy-config": "fiori add deploy-config",

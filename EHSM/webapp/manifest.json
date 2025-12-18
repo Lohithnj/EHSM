@@ -17,7 +17,7 @@
     },
     "dataSources": {
       "mainService": {
-        "uri": "/sap/opu/odata/sap/ZBL_EHSM_ODATA_SRV/",
+        "uri": "http://172.17.19.24:8000/sap/opu/odata/sap/ZBL_EHSM_ODATA_SRV/",
         "type": "OData",
         "settings": {
           "annotations": [],
@@ -66,7 +66,11 @@
       "": {
         "dataSource": "mainService",
         "preload": true,
-        "settings": {}
+        "settings": {
+          "defaultBindingMode": "TwoWay",
+          "defaultCountMode": "Inline",
+          "useBatch": false
+        }
       }
     },
     "resources": {
@@ -90,17 +94,51 @@
       },
       "routes": [
         {
-          "name": "RouteView1",
-          "pattern": ":?query:",
-          "target": [
-            "TargetView1"
-          ]
+          "name": "login",
+          "pattern": "",
+          "target": "login"
+        },
+        {
+          "name": "dashboard",
+          "pattern": "dashboard",
+          "target": "dashboard"
+        },
+        {
+          "name": "incidents",
+          "pattern": "incidents",
+          "target": "incidents"
+        },
+        {
+          "name": "risks",
+          "pattern": "risks",
+          "target": "risks"
+        },
+        {
+          "name": "profile",
+          "pattern": "profile",
+          "target": "profile"
         }
       ],
       "targets": {
-        "TargetView1": {
-          "id": "View1",
-          "name": "View1"
+        "login": {
+          "id": "Login",
+          "name": "Login"
+        },
+        "dashboard": {
+          "id": "Dashboard",
+          "name": "Dashboard"
+        },
+        "incidents": {
+          "id": "Incidents",
+          "name": "Incidents"
+        },
+        "risks": {
+          "id": "Risks",
+          "name": "Risks"
+        },
+        "profile": {
+          "id": "Profile",
+          "name": "Profile"
         }
       }
     },

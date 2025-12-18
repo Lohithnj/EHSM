@@ -3,8 +3,9 @@ sap.ui.define([
 ], (Controller) => {
     "use strict";
 
-    return Controller.extend("ehsm.controller.View1", {
+    return Controller.extend("ehsm.controller.App", {
         onInit() {
+            // App controller initialization
         }
     });
 });
